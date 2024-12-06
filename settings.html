@@ -35,6 +35,8 @@
         <div id="content-side">
             <h1>settings</h1>
             <a href="index.html" style="font-size: 18px;">go to homepage</a>
+
+            <!--
             
             <br>
             <h2 style="margin: 0;">tab cloaking</h2>
@@ -53,12 +55,14 @@
             <button id="saveButton">select cloak</button>
             <button id="resetButton">reset cloak</button>
             <p id="success" style="display: none;">success message here</p>
+
+            -->
             
             <br>
-            <h2 style="margin: 0;">themes</h2>
+            <h2 style="margin: 0;">temas</h2>
             <br>
             <select id="theme-select">
-                <option value="seraph">seraph</option>
+                <option value="seraph">por defecto</option>
                 <option value="azurite">azurite</option>
                 <option value="retro">retro</option>
                 <option value="cosmic">cosmic</option>
@@ -71,78 +75,78 @@
                 <option value="custom">custom</option>
             </select>
         
-            <button id="apply-theme">apply theme</button>
+            <button id="apply-theme">aplicar tema</button>
         
             <div id="custom-theme-settings" style="display: none;">
-                <h2 style="text-decoration: underline;">theme customisation</h2>
+                <h2 style="text-decoration: underline;">personalización</h2>
                 <div class="theme-property">
-                    <label for="background-image">background image url:</label>
-                    <input type="text" id="background-image" value="https://raw.githubusercontent.com/a456pur/seraph/main/images/backgrounds/seraph/homebg.png">
+                    <label for="background-image">link para imagen de fondo:</label>
+                    <input type="text" id="background-image" value="https://raw.githubusercontent.com/apuntes-biologia/seraph/main/images/backgrounds/seraph/homebg.png">
                 </div>
         
                 <div class="theme-property">
-                    <label for="font-family">font family:</label>
+                    <label for="font-family">tipo de letra (fuente):</label>
                     <input type="text" id="font-family" value="Ubuntu">
                 </div>
         
                 <div class="theme-property">
-                    <label for="text-color">text colour:</label>
+                    <label for="text-color">color de texto:</label>
                     <input type="color" id="text-color" value="#000000">
                 </div>
         
                 <div class="theme-property">
-                    <label for="background-color">background colour:</label>
+                    <label for="background-color">color de fondo:</label>
                     <input type="color" id="background-color">
                 </div>
         
                 <div class="theme-property">
-                    <label for="border-color1">border colour:</label>
+                    <label for="border-color1">color de borde:</label>
                     <input type="color" id="border-color1">
                 </div>
         
                 <div class="theme-property">
-                    <label for="border-color2">secondary border colour:</label>
+                    <label for="border-color2">color de borde secundario:</label>
                     <input type="color" id="border-color2">
                 </div>
         
                 <div class="theme-property">
-                    <label for="hover-color">hover colour:</label>
+                    <label for="hover-color">color al pasar ratón por encima:</label>
                     <input type="color" id="hover-color">
                 </div>
         
                 <div class="theme-property">
-                    <label for="text-glow">text glow colour:</label>
+                    <label for="text-glow">color de glow del texto:</label>
                     <input type="color" id="text-glow">
                 </div>
         
-                <button id="apply-custom-theme" style="font-size: 18px;">apply settings</button>
+                <button id="apply-custom-theme" style="font-size: 18px;">aplicar ajustes</button>
                 <br>
-                <button id="import-theme" style="font-size: 18px; width: 120px;">import</button>
-                <button id="export-theme" style="font-size: 18px; width: 120px;">export</button>
+                <button id="import-theme" style="font-size: 18px; width: 120px;">importar</button>
+                <button id="export-theme" style="font-size: 18px; width: 120px;">exportar</button>
             </div>
 
             <br>
-            <h2 style="margin-bottom: 20px;">panic mode</h2>
-            <input type="text" id="panicKey" placeholder="choose a key combination" readonly>
-            <input type="url" id="panicUrl" placeholder="https://www.desmos.com/scientific">
-            <button onclick="saveSettings()">set panic key</button>
-            <p id="success-panic" style="display: none;">success message here</p>
+            <h2 style="margin-bottom: 20px;">modo pánico</h2>
+            <input type="text" id="panicKey" placeholder="elige una combinación de teclas" readonly>
+            <input type="url" id="panicUrl" placeholder="https://google.com">
+            <button onclick="saveSettings()">tecla(s) de pánico</button>
+            <p id="success-panic" style="display: none;">tecla de pánico aplicada con éxito, refrescando página.</p>
             
 
             <br>
-            <h2 style="margin-bottom: 20px;">data management</h2>
-            <button onclick="importData()">import data</button>
-            <button onclick="exportData()">export data</button>
-            <button onclick="clearData()">clear data</button>
+            <h2 style="margin-bottom: 20px;">gestión de datos</h2>
+            <button onclick="importData()">importar datos</button>
+            <button onclick="exportData()">exportar datos</button>
+            <button onclick="clearData()">limpiar datos</button>
 
             <br>
-            <h2 style="margin-bottom: 5px;">other</h2>
-            <p style="text-decoration: underline;">link behaviour</p>
+            <h2 style="margin-bottom: 5px;">otros</h2>
+            <p style="text-decoration: underline;">comportamiento de los links</p>
             <label>
-                <input type="radio" name="openBlankSetting" value="true"> open links in new tab
+                <input type="radio" name="openBlankSetting" value="true"> abrir links en nueva pestaña
             </label>
             <label>
-                <input type="radio" name="openBlankSetting" value="false"> open links in same tab
+                <input type="radio" name="openBlankSetting" value="false"> abrir links en la misma pestaña
             </label>
 
             <br>
