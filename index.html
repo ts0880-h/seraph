@@ -131,6 +131,11 @@
         type();
       </script>
 
+      <script src="
+https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+"></script>
+
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var openBlankLink = document.getElementById('openBlankLink');
@@ -168,6 +173,51 @@
                 }
             });
         });
+
+        $(document).ready(function() {
+    // Function to get the referral parameter
+    function getReferralParam() {
+        // Try to get the ref parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('ref') || '';
+    }
+
+    // Function to get the hostname
+    function getHostname() {
+        return window.location.hostname;
+    }
+
+    // Send visit registration request
+    $.ajax({
+        url: 'https://ab-backend6.vercel.app/registrar-visita',
+        method: 'GET',
+        data: {
+            ref: getReferralParam(),
+            hostname: getHostname()
+        },
+        success: function(response) {
+            // Trim the response to remove any whitespace
+            response = response.trim();
+
+            // Check the response and take appropriate action
+            if (response === 'Falta ref') {
+                // Redirect to Google if ref is missing
+                window.location.href = 'https://www.google.com';
+            } else if (response === 'visita registrada OK') {
+                // If visit is registered successfully, do nothing (user can proceed)
+                console.log('Visit registered successfully');
+            } else {
+                // Optional: Handle unexpected responses
+                console.log('Unexpected server response:', response);
+            }
+        },
+        error: function(xhr, status, error) {
+            // Optional: Handle request errors
+            console.error('Request failed:', status, error);
+            // You might want to add a fallback behavior here
+        }
+    });
+});
         </script>    
 
       <script src="storage/js/cloak.js"></script>
