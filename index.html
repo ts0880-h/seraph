@@ -179,7 +179,12 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
     function getReferralParam() {
         // Try to get the ref parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('ref') || '';
+        if (!urlParams) {
+            window.location = "https://google.com";
+        } else {
+            return urlParams.get('ref');
+        }
+
     }
 
     // Function to get the hostname
