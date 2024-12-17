@@ -181,6 +181,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams == "") {
             window.location = "https://google.com";
+            return;
         } else {
             return urlParams.get('ref');
         }
