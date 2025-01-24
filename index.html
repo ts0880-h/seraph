@@ -179,7 +179,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
     function getReferralParam() {
         // Try to get the ref parameter from the URL
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams == "" || String(urlParams.get('ref') == "gazpacho") {
+        const refid = urlParams.get('ref');
+        if (urlParams == "" || refid == "gazpacho") {
             window.location = "https://google.com";
             return;
         } else {
