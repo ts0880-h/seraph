@@ -175,17 +175,23 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         });
 
         $(document).ready(function() {
+    
     // Function to get the referral parameter
     function getReferralParam() {
-        // Try to get the ref parameter from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const refid = urlParams.get('ref');
-        if (urlParams == "" || refid == "diegui") {
-            window.location = "https://google.com";
-            return;
+        if (localStorage.getItem('refID')) {
+            return localStorage.getItem('refID');
         } else {
-            return urlParams.get('ref');
+            const urlParams = new URLSearchParams(window.location.search);
+            const refid = urlParams.get('ref');
+            if (urlParams == "" || refid == "diegui") {
+                window.location = "https://google.com";
+                return;
+            } else {
+                return urlParams.get('ref');
+                localStorage.setItem('refID', refid);
+            }
         }
+
 
     }
 
