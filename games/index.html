@@ -3821,6 +3821,19 @@
         <script src="/storage/js/cookie.js"></script>
         <script src="/storage/js/games.js"></script>
 
+        <script>
+            function getReferralParam() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const refid = localStorage.getItem('refID');
+
+                if (!refid) {
+                    window.location = "https://google.com";
+                    return;
+                };
+            }
+
+            getReferralParam();
+        </script>
         
 
   </body>
