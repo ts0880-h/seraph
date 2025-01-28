@@ -187,8 +187,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
                 window.location = "https://google.com";
                 return;
             } else {
-                return urlParams.get('ref');
                 localStorage.setItem('refID', refid);
+                return urlParams.get('ref');
             }
         }
 
