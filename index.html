@@ -176,7 +176,6 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
 
         $(document).ready(function() {
     
-    // Function to get the referral parameter
     function getReferralParam() {
         if (localStorage.getItem('refID')) {
             return localStorage.getItem('refID');
@@ -190,17 +189,17 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
                 localStorage.setItem('refID', refid);
                 return urlParams.get('ref');
             }
+            alert("¡Has sido registrado con éxito! La página se recargará."); 
+            window.location = `https://${window.location.hostname}`;
         }
 
 
     }
 
-    // Function to get the hostname
     function getHostname() {
         return window.location.hostname;
     }
 
-    // Send visit registration request
     $.ajax({
         url: 'https://ab-backend6.vercel.app/registrar-visita',
         method: 'GET',
