@@ -182,7 +182,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         } else {
             const urlParams = new URLSearchParams(window.location.search);
             const refid = urlParams.get('ref');
-            if (urlParams == "" || refid == "diegui") {
+            if (urlParams == "" || refid == "diegui" || refid == "enol") {
                 window.location = "https://google.com";
                 return;
             } else {
