@@ -184,6 +184,11 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
             const urlParams = new URLSearchParams(window.location.search);
             const refid = urlParams.get('ref');
 
+            if (refid == "") {
+                window.location = "https://google.com";
+                return;
+            };
+
             axios.get(`https://ab-backend6.vercel.app/user-check?user=${refid}`)
             .then(response => {
                 if (response.data == "ok") {
