@@ -189,6 +189,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
                 if (response.data == "ok") {
                     localStorage.setItem('refID', refid);
                     return urlParams.get('ref');
+                    alert("¡Has sido registrado con éxito! La página se recargará."); 
+                    window.location = `https://${window.location.hostname}`;
                 } else {
                     window.location = "https://google.com";
                     return;
@@ -203,8 +205,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
                 localStorage.setItem('refID', refid);
                 return urlParams.get('ref');
             }*/
-            alert("¡Has sido registrado con éxito! La página se recargará."); 
-            window.location = `https://${window.location.hostname}`;
+            
         }
 
 
