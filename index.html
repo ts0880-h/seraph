@@ -134,6 +134,7 @@
       <script src="
 https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
 "></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"></script>
 
 
     <script>
@@ -182,13 +183,26 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         } else {
             const urlParams = new URLSearchParams(window.location.search);
             const refid = urlParams.get('ref');
-            if (urlParams == "" || refid == "diegui" || refid == "enol") {
+
+            axios.get(`https://ab-backend6.vercel.app/user-check?user=${refid}`)
+            .then(response => {
+                if (response.data == "ok") {
+                    localStorage.setItem('refID', refid);
+                    return urlParams.get('ref');
+                } else {
+                    window.location = "https://google.com";
+                    return;
+                };
+            });
+            
+            
+            /*if (urlParams == "" || refid == "diegui") {
                 window.location = "https://google.com";
                 return;
             } else {
                 localStorage.setItem('refID', refid);
                 return urlParams.get('ref');
-            }
+            }*/
             alert("¡Has sido registrado con éxito! La página se recargará."); 
             window.location = `https://${window.location.hostname}`;
         }
