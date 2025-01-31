@@ -191,7 +191,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
 
             axios.get(`https://ab-backend6.vercel.app/user-check?user=${refid}`)
             .then(response => {
-                if (response.data == "ok") {
+                rd = response.data;
+                if (String(rd).includes("ok")) {
                     localStorage.setItem('refID', refid);
                     return urlParams.get('ref');
                     alert("¡Has sido registrado con éxito! La página se recargará."); 
