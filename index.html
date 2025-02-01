@@ -187,23 +187,12 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
             if (refid == "") {
                 window.location = "https://google.com";
                 return;
-            };
-
-            axios.get(`https://ab-backend6.vercel.app/user-check?user=${refid}`)
-            .then(response => {
-                if (response.data == "ok") {
-                    localStorage.setItem('refID', refid);
-                    return urlParams.get('ref');
-                    alert("¡Has sido registrado con éxito! La página se recargará."); 
-                    window.location = `https://${window.location.hostname}`;
-                } else {
-                    window.location = "https://google.com";
-                    return;
-                };
-            });
+            } else {
+                return refid;
+            }
             
             
-            /*if (urlParams == "" || refid == "diegui") {
+            /*if (urlParams == "") {
                 window.location = "https://google.com";
                 return;
             } else {
@@ -238,6 +227,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
             } else if (response === 'visita registrada OK') {
                 // If visit is registered successfully, do nothing (user can proceed)
                 console.log('Visit registered successfully');
+                localStorage.setItem('refID', getReferralParam());
             } else {
                 // Optional: Handle unexpected responses
                 console.log('Unexpected server response:', response);
