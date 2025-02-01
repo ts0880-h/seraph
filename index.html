@@ -178,24 +178,20 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         $(document).ready(function() {
     
     function getReferralParam() {
-        if (localStorage.getItem('refID')) {
-            const urlParams = new URLSearchParams(window.location.search);
-            const refid = urlParams.get('ref');
+        const urlParams = new URLSearchParams(window.location.search);
+        const refid = urlParams.get('ref');
 
-            if (refid) {
-                return refid;
-            } else {
-                return localStorage.getItem('refID');
+        if (refid == "") {
+            alert("¡No tienes permiso para acceder a esta página!");
+            window.location = "https://google.com";
+            return;
         } else {
-            const urlParams = new URLSearchParams(window.location.search);
-            const refid = urlParams.get('ref');
-
-            if (refid == "") {
-                window.location = "https://google.com";
-                return;
+            if (localStorage.getItem('refID')) {
+                return localStorage.getItem('refID');
             } else {
                 return refid;
             }
+        }
             
             
             /*if (urlParams == "") {
@@ -243,6 +239,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         error: function(xhr, status, error) {
             // Optional: Handle request errors
             console.error('Request failed:', status, error);
+            alert("Ha ocurrido un error. Por favor, inténtalo de nuevo.")
+            window.location = "https://google.com";
             // You might want to add a fallback behavior here
         }
     });
