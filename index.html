@@ -179,7 +179,13 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
     
     function getReferralParam() {
         if (localStorage.getItem('refID')) {
-            return localStorage.getItem('refID');
+            const urlParams = new URLSearchParams(window.location.search);
+            const refid = urlParams.get('ref');
+
+            if (refid) {
+                return refid;
+            } else {
+                return localStorage.getItem('refID');
         } else {
             const urlParams = new URLSearchParams(window.location.search);
             const refid = urlParams.get('ref');
