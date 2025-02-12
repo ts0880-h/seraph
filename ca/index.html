@@ -1,0 +1,53 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biología Celular</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🔬 Biología Celular Esencial 🧬</h1>
+        <p class="subtitle">Explora los componentes fundamentales de la vida</p>
+    </header>
+
+    <main class="contenedor-grid">
+        
+        <section class="organulo animado" onclick="toggleDestacar(this)">
+            <div class="icono-organulo">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <path d="M50 15 Q70 30 50 85 Q30 30 50 15" fill="#ff6b6b" class="mito-glow"/>
+                </svg>
+            </div>
+            <h2>Mitocondrias</h2>
+            <p>Orgánulos responsables de la producción de ATP mediante la respiración celular. Contienen su propio ADN y son esenciales para el metabolismo energético.</p>
+        </section>
+        
+        <section class="organulo animado" onclick="toggleDestacar(this)">
+            <div class="icono-organulo">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <circle cx="50" cy="50" r="40" fill="#4ecdc4" class="nucleo-pulsante"/>
+                </svg>
+            </div>
+            <h2>Núcleo Celular</h2>
+            <p>Centro de control de la célula que almacena el material genético (ADN). Coordina las actividades celulares como la replicación y la transcripción.</p>
+        </section>
+        
+        <section class="organulo animado" onclick="toggleDestacar(this)">
+            <div class="icono-organulo">
+                <svg viewBox="0 0 100 100" width="60" height="60">
+                    <rect x="25" y="25" width="50" height="50" rx="10" fill="#45b7d1" class="ribo-spin"/>
+                </svg>
+            </div>
+            <h2>Ribosomas</h2>
+            <p>Estructuras responsables de la síntesis de proteínas mediante la traducción del ARN mensajero. Compuestos por ARN ribosomal y proteínas.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Instituto Nacional de Biología Celular - Todos los derechos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

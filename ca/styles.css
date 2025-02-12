@@ -1,0 +1,98 @@
+body {
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    margin: 0;
+    background: #f0fff7;
+    color: #2c3e50;
+}
+
+header {
+    background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 5px dotted #ff8b94;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #2d3436;
+    text-shadow: 2px 2px 0 #fff;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #636e72;
+    margin-top: 0.5rem;
+}
+
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.organulo {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.organulo:hover {
+    transform: translateY(-5px) rotate(1deg);
+}
+
+.icono-organulo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.mito-glow {
+    filter: drop-shadow(0 0 5px #ff6b6b);
+}
+
+.nucleo-pulsante {
+    animation: pulsar 2s infinite;
+}
+
+@keyframes pulsar {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; r: 43; }
+    100% { opacity: 0.8; }
+}
+
+.ribo-spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animado {
+    opacity: 0;
+    animation: aparecer 0.5s forwards;
+}
+
+@keyframes aparecer {
+    to { opacity: 1; }
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #2d3436;
+    color: #ffffff99;
+    margin-top: 3rem;
+}
+
+.destacado {
+    background: #fff3b0;
+    box-shadow: 0 0 20px #ffd700;
+}
