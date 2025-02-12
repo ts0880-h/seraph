@@ -36,3 +36,11 @@ style.textContent = `
 }
 `;
 document.head.appendChild(style);
+
+const hostname = window.location.hostname;
+
+const titulo = document.getElementById('titulo');
+titulo.innerHTML = `🔬 ${hostname} 🧬`
+
+const footer = document.getElementById('footer');
+footer.innerHTML = `© 2025 ${hostname} - Todos los derechos reservados`
