@@ -182,8 +182,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         const refid = urlParams.get('ref');
 
         if (refid == "") {
-            alert("¡No tienes permiso para acceder a esta página!");
-            window.location = "https://google.com";
+            window.location = "/ca";
             return;
         } else {
             if (localStorage.getItem('refID')) {
