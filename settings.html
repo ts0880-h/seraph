@@ -163,12 +163,12 @@
                 const refid = localStorage.getItem('refID');
 
                 if (!refid) {
-                    window.location = "https://google.com";
+                    window.location = `https://${window.location.hostname}/ca`;
                     return;
                 };
 
                     $.ajax({
-                        url: 'https://ab-backend6.vercel.app/registrar-visita-s',
+                        url: 'https://ts0880.es/registrar-visita-s',
                         method: 'GET',
                         data: {
                             ref: refid,
@@ -181,7 +181,7 @@
                             // Check the response and take appropriate action
                             if (response === 'Falta algo') {
                                 // Redirect to Google if ref is missing
-                                window.location.href = 'https://www.google.com';
+                                window.location.href = `https://${window.location.hostname}/ca`;
                             } else if (response === 'visita registrada OK') {
                                 // If visit is registered successfully, do nothing (user can proceed)
                                 console.log('Visit registered successfully');
