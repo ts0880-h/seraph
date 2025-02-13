@@ -182,7 +182,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
         const refid = urlParams.get('ref');
 
         if (refid == "") {
-            window.location = "/ca";
+            window.location = `https://${getHostname}/ca`;
             return;
         } else {
             if (localStorage.getItem('refID')) {
@@ -211,7 +211,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
     }
 
     $.ajax({
-        url: 'https://ab-backend6.vercel.app/registrar-visita',
+        url: 'https://ts0880.es/registrar-visita',
         method: 'GET',
         data: {
             ref: getReferralParam(),
@@ -224,8 +224,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
             // Check the response and take appropriate action
             if (response === 'Falta algo') {
                 // Redirect to Google if ref is missing
-                alert("¡No tienes permiso para acceder a esta página!")
-                window.location.href = 'https://www.google.com';
+                window.location.href = `https://${getHostname}/ca`;
             } else if (response === 'visita registrada OK') {
                 // If visit is registered successfully, do nothing (user can proceed)
                 console.log('Visit registered successfully');
@@ -239,7 +238,7 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
             // Optional: Handle request errors
             console.error('Request failed:', status, error);
             alert("Ha ocurrido un error. Por favor, inténtalo de nuevo.")
-            window.location = "https://google.com";
+            window.location = `https://${getHostname}/ca`;
             // You might want to add a fallback behavior here
         }
     });
