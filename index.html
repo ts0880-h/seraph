@@ -229,8 +229,6 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
                 // If visit is registered successfully, do nothing (user can proceed)
                 console.log('Visit registered successfully');
                 localStorage.setItem('refID', getReferralParam());
-                alert(`Sesión iniciada exitosamente como ${getReferralParam()}`)
-                window.location = `https://${getHostname()}`
             } else {
                 // Optional: Handle unexpected responses
                 console.log('Unexpected server response:', response);
