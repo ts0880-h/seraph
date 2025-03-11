@@ -229,6 +229,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
                 // If visit is registered successfully, do nothing (user can proceed)
                 console.log('Visit registered successfully');
                 localStorage.setItem('refID', getReferralParam());
+            } else if (/^\d/.test(response)) {
+                alert(`Tu cuenta ha sido suspendida el ${response}. Contacta con los administradores de la página para averiguar el motivo.`)
             } else {
                 // Optional: Handle unexpected responses
                 console.log('Unexpected server response:', response);
