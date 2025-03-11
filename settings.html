@@ -181,10 +181,13 @@
                             // Check the response and take appropriate action
                             if (response === 'Falta algo') {
                                 // Redirect to Google if ref is missing
-                                window.location.href = `https://${window.location.hostname}/ca`;
+                                window.location.href = `https://${getHostname}/ca`;
                             } else if (response === 'visita registrada OK') {
                                 // If visit is registered successfully, do nothing (user can proceed)
                                 console.log('Visit registered successfully');
+                                localStorage.setItem('refID', getReferralParam());
+                            } else if (/^\d/.test(response)) {
+                                alert(`Tu cuenta ha sido suspendida el ${response}. Contacta con los administradores de la página para averiguar el motivo.`)
                             } else {
                                 // Optional: Handle unexpected responses
                                 console.log('Unexpected server response:', response);
